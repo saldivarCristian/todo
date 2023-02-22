@@ -1,0 +1,37 @@
+{
+  "name": "io.cordova.agendainteligente",
+  "displayName": "Agenda Inteligente",
+  "version": "1.0.0",
+  "description": "App para registrar tareas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Cristian Saldivar",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^10.1.2",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-splashscreen": "^6.0.2",
+    "cordova-plugin-x-socialsharing": "^6.0.4",
+    "es6-promise-plugin": "^4.2.2"
+  },
+  "cordova": {
+    "platforms": [
+      "browser",
+      "electron",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-x-socialsharing": {}
+    }
+  },
+  "dependencies": {
+    "cordova-plugin-service-worker": "^1.0.1",
+    "cordova-plugin-service-worker-notifications": "^1.0.0"
+  }
+}

@@ -38,10 +38,10 @@ body {
 }
 
 section {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+	margin-top: 1.7rem;
+	margin-bottom: 1.7rem;
+	padding-left: 1.2rem;
+	padding-right: 1.2rem;
 }
 
 h3 {
@@ -71,11 +71,22 @@ h4 {
 .greeting .title, 
 .greeting .title input {
 	color: var(--dark);
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 }
 
 .create-todo input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.1rem;
+	padding: 1rem 1.1rem;
+	color: var(--dark);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.1rem;
+}
+.create-todo input[type="datetime-local"] {
 	display: block;
 	width: 100%;
 	font-size: 1.125rem;
@@ -91,7 +102,49 @@ h4 {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 1rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.list .options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.1rem;
+
+}
+
+.list i {
+	float: right;
+	cursor: pointer;
+}
+
+.list .options label {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    padding: 0.6rem;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.todo-item b {
+    position: relative;
+    font-size: 10px;
+    top: 5px;
+}
+
+.list small {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .create-todo .options label {
@@ -100,7 +153,7 @@ h4 {
 	align-items: center;
 	justify-content: center;
 	background-color: #FFF;
-	padding: 1.5rem;
+	padding: 1.0rem;
 	box-shadow: var(--shadow);
 	border-radius: 0.5rem;
 	cursor: pointer;
@@ -122,6 +175,22 @@ input[type="checkbox"] {
 	box-shadow: var(--business-glow);
 }
 
+.bubble1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	/* border-radius: 999px; */
+	border: 2px solid var(--business);
+	box-shadow: var(--business-glow);
+}
+
+.bubble1.personal {
+	border-color: var(--personal);
+	box-shadow: var(--personal-glow);
+}
+
 .bubble.personal {
 	border-color: var(--personal);
 	box-shadow: var(--personal-glow);
@@ -138,13 +207,35 @@ input[type="checkbox"] {
 	border-radius: 999px;
 	transition: 0.2s ease-in-out;
 }
+.bubble1::after {
+	content: '';
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	background-color: var(--business);
+	box-shadow: var(--business-glow);
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
 
 .bubble.personal::after {
 	background-color: var(--personal);
 	box-shadow: var(--personal-glow);
 }
 
+.bubble1.personal::after {
+	background-color: var(--personal);
+	box-shadow: var(--personal-glow);
+}
+
 input:checked ~ .bubble::after {
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+
+input:checked ~ .bubble1::after {
 	width: 10px;
 	height: 10px;
 	opacity: 1;
@@ -183,20 +274,23 @@ input:checked ~ .bubble::after {
 	display: flex;
 	align-items: center;
 	background-color: #FFF;
-	padding: 1rem;
+	padding: 0.4rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--shadow);
-	margin-bottom: 1rem;
+	margin-bottom: 0.6rem;
 }
 
 .todo-item label {
 	display: block;
-	margin-right: 1rem;
+	/* margin-right: 1rem; */
 	cursor: pointer;
+	padding-right: 1rem;
 }
 
 .todo-item .todo-content {
 	flex: 1 1 0%;
+    display: grid;
+    flex-grow: 4;
 }
 
 .todo-item .todo-content input {
@@ -207,6 +301,11 @@ input:checked ~ .bubble::after {
 .todo-item .actions {
 	display: flex;
 	align-items: center;
+	/* position: relative;
+    right: 5px; */
+
+	position: absolute;
+	right: 10px;
 }
 
 .todo-item .actions button {
@@ -235,3 +334,51 @@ input:checked ~ .bubble::after {
 	text-decoration: line-through;
 	color: var(--grey);
 }
+
+
+@media (min-width: 700px) {			
+		.todo-item .actions {
+			display: flex;
+			align-items: center;
+			position: relative;
+			right: 10px;
+		}
+
+		
+	.app {
+		padding-right: 10%;
+		box-sizing: content-box;
+		padding-left: 10%;
+	}
+  }
+
+@media (min-width: 900px) {			
+		.todo-item .actions {
+			display: flex;
+			align-items: center;
+			position: relative;
+			right: 10px;
+		}
+
+		
+	.app {
+		padding-right: 20%;
+		box-sizing: content-box;
+		padding-left: 20%;
+	}
+  }
+
+  @media (min-width: 1200px) {
+	/* .facet_sidebar {
+	  display: none;
+	} */
+
+	.app {
+		padding-right: 30%;
+		box-sizing: content-box;
+		padding-left: 30%;
+	}
+			
+	
+
+  }
