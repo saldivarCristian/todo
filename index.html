@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Agenda Inteligente</title>
+
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="Agenda Inteligente" name="description" />
+	<meta content="Quattro S.A." name="author" />
+	<link rel="manifest" href="manifest.webmanifest?v12">
+	<link rel="manifest" href="manifest.json?v12">
+	<meta name="theme-color" content="#2596be">
+
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="Agenda Inteligente">
+	<meta itemprop="description" content="Agenda Inteligente">
+	<meta itemprop="image" content="image/icon.png">
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://local.quattropy.com/colegioLaAurora/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Agenda Inteligente">
+	<meta property="og:description" content="Agenda Inteligente...">
+	<meta property="og:image" content="image/icon.png">
+
+	<link rel="apple-touch-icon" href="image/icon.png">
+
+	<link href="image/icon.png?v12" rel="icon" type="image/x-icon" />
+
+	<!-- CSS Import -->
+	<link rel="stylesheet" href="main.css" />
+
+	<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css
+" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- End of CSS Import -->
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- End of Fonts -->
+</head>
+<body>
+	<!-- App Wrapper -->
+	<main class="app">
+		<!-- Greeting -->
+		<section class="greeting">
+			<h2 class="title">
+				¿Qué tal?, <input type="text" id="name" placeholder="Escribir nombre" />
+			</h2>
+		</section>
+		<!-- End of Greeting -->
+		
+		<!-- New Todo -->
+		<section class="create-todo" id="createTodo">
+			<h3>Crear Item</h3>
+			<form id="new-todo-form">
+				<h4>¿Qué hay en tu lista?</h4>
+				<input 
+					type="text" 
+					placeholder="Ejemplo: Comprar tomates"
+					name="content"
+					id="content" />
+				<h4>¿Seleccione fecha?</h4>
+				<input 
+					type="datetime-local" 
+					placeholder="Fecha"
+					name="date"
+					id="date" />
+				<h4>Elige una categoría</h4>
+				<div class="options">
+					<label>
+						<input type="radio" name="category" id="category1" value="business" /> 
+						<span class="bubble business"></span>
+						<div>Colegio</div>
+					</label>
+					<label>
+						<input type="radio" name="category" id="category2" value="personal" />
+						<span class="bubble personal"></span>
+						<div>Personal</div>
+					</label>
+				</div>
+				<input type="submit" value="AGREGAR" />
+			</form>
+		</section>
+		<!-- End of New Todo -->
+
+		<!-- Todo List -->
+		<section class="todo-list list">
+			<div class="options">
+				<small>Filtrar</small>
+				<label >
+					<input type="checkbox" name="category"  id="category3" value="business" checked/> 
+					<span class="bubble1 business"></span>
+					<div> Colegio</div>
+				</label>
+				<label>
+					<input type="checkbox" name="category"  id="category4" value="personal"  checked/>
+					<span class="bubble1 personal"></span>
+					<div> Personal</div>
+				</label>
+			</div> 
+			<h4 class="list "><i id="toogleFullScreen" class="fa-solid fa-up-right-and-down-left-from-center"></i> LISTA   </h4>
+
+			
+			
+			<div class="list" id="todo-list"></div>
+		</section>
+		<!-- End of Todo List -->
+
+	</main>
+	<!-- End of App Wrapper -->
+
+	<!-- JS Import -->
+	<script src="db.js"></script>
+
+	<script src="main.js"></script>
+	<!-- End of JS Import -->
+</body>
